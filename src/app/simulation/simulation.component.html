@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>Monty Hall Simulator</h1>
+    <form (ngSubmit)="onSubmit()">
+      <!-- Number of Simulations -->
+      <div class="form-group">
+        <label for="numberOfSimulations">Number of Simulations:</label>
+        <input
+          type="number"
+          class="form-control"
+          id="numberOfSimulations"
+          [(ngModel)]="numberOfSimulations"
+          name="numberOfSimulations"
+          required
+        />
+      </div>
+      <!-- Change Dore -->
+      <div class="form-group">
+        <label for="changeDoor">Change Door:</label>
+        <select
+          class="form-control"
+          id="changeDoor"
+          [(ngModel)]="changeDoor"
+          name="changeDoor"
+        >
+          <option [ngValue]="true">Yes</option>
+          <option [ngValue]="false">No</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Simulate</button>
+    </form>
+  
+    <div *ngIf="results">
+      <h2>Simulation Results</h2>
+      <p>Number of Wins Without Changing: {{ results.numberOfWinsWithoutChanging }}</p>
+      <p>Number of Wins With Changing: {{ results.numberOfWinsWithChanging }}</p>
+    </div>
+  </div>
+  
