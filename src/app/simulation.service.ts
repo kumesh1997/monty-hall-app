@@ -16,7 +16,7 @@ interface SimulationResult {
   providedIn: 'root'
 })
 export class SimulationService {
-  private apiUrl = 'http://localhost:5070/simulation';
+  private apiUrl = 'http://localhost:5098/Simulation/simulate';
   constructor(private http: HttpClient) { }
 
   simulateGame(params: SimulationParameter): Observable<SimulationResult>{
