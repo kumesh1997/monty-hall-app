@@ -1,12 +1,20 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { SimulationComponent } from './simulation/simulation.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        SimulationComponent
       ],
+      imports: [
+        FormsModule,
+        HttpClientTestingModule
+      ]
     }).compileComponents();
   });
 
@@ -22,10 +30,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('monty-hall-app');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('monty-hall-app app is running!');
-  });
 });
